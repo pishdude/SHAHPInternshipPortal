@@ -1,0 +1,19 @@
+h1{
+  color :#ffc107;
+}
+
+.divider{
+border-right:2px solid #ffc107;
+}
+
+.jumbotron{
+  background-color: #ffc10749;  
+}
+
+.list-group-item{
+  background-color:  #ffc10749;
+}
+
+.card{
+  background-color: #ffc10749;  
+}

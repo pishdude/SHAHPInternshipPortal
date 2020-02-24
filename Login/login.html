@@ -1,0 +1,43 @@
+<!-- Stylesheets -->
+
+<div class="back">
+    <div ng-app="internApp" ng-controller="loginCtrl" style="height: 100%;">
+
+        <div class="row" style="padding-top: 60px;height: 600px;">
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4 loginBox">
+                <div style="margin: auto;width: 50%;">
+                    <img src="../assets/dal-logo-bw.png" width="232" height="57" alt="Dalhousie University" />
+
+                    <br><br><br>
+                    <form>
+                        <div class="form-group">
+                            <label for="email">Email address</label>
+                            <input type="email" class="form-control" id="email" aria-describedby="bannerId"
+                                placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Password">
+                        </div>
+                        <button type="button" class="btn btn-link" style="padding: 0;width: fit-content;">Forgot
+                            Password?</button>
+                        <button  class="btn btn-primary" style="float: right;" ng-click="login()">Login</button>
+                        <br><br>
+                        <button type="button" ng-click="register()" class="btn btn-secondary" style="float: right;">New User?Register
+                            here</button>
+
+                        <br>
+
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-4">
+
+            </div>
+
+        </div>
+    </div>
+</div>

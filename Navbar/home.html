@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US" style="height: 100%;">
+
+<!-- Libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.js"></script>
+<script src="https://unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
+integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
+integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
+integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<!-- Controllers -->
+<script src="homeController.js"></script>
+<script src="../Login/loginController.js"></script>
+<script src="../Register/registerController.js"></script>
+<script src="../Sidenav/sideNavController.js"></script>
+<script src="../Search/searchController.js"></script>
+<script src="../Agency/agencyController.js"></script>
+<script src="../StudentHome/studentController.js"></script>
+
+<!-- Stylesheets -->
+<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="../Login/login.css">
+<link rel="stylesheet" href="../Sidenav/sidenav.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../Search/search.css">
+<link rel="stylesheet" href="../Agency/agency.css">
+<link rel="stylesheet" href="../StudentHome/student.css">
+
+
+<body style="margin: 0;height: 100%;" ng-app="internApp" ng-controller="homeCtrl">
+
+<div >
+ <div class= "row navbar" >
+    <div class="col-md-3" style="padding-top: 5px;">
+        School of health
+    </div>
+    <div class="col-md-8">
+
+    </div>
+    <div class="col-md-1" style="padding-top: 5px;">
+        Internship Portal
+    </div>
+
+ </div>
+
+</div>
+<div style="height:95vh" class="back">
+    <div data-ui-view=""></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,156 @@
+
+
+
+<div>
+    <div ng-app="internApp" ng-controller="searchCtrl" style="height: 100vh;">
+        <div class="row" style="margin:15px;">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="dropdown">
+                            <button style="width: 100%;" class="btn btn-warning " type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{city}} <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                                <span class="dropdown-item">Select City</span>
+                                <span class="dropdown-item">Halifax</span>
+                                <span class="dropdown-item">Toronto</span>
+                                <span class="dropdown-item">Vancouver</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="dropdown">
+                            <button  style="width: 100%;" class="btn btn-warning " type="button" 
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{state}} <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                                <span class="dropdown-item">Select State</span>
+                                <span class="dropdown-item">Nova scotia</span>
+                                <span class="dropdown-item">Ontario</span>
+                                <span class="dropdown-item">British Columbia</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="dropdown">
+                            <button  style="width: 100%;" class="btn btn-warning " type="button" 
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{type}} <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                                <span class="dropdown-item">Select Type</span>
+                                <span class="dropdown-item">TR</span>
+                                <span class="dropdown-item">HRPO</span>
+                                <span class="dropdown-item">Rec Management</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="dropdown">
+                            <button   style="width: 100%;" class="btn btn-warning " type="button" 
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{category}} <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                                <span class="dropdown-item">Select Category</span>
+                                <span class="dropdown-item">???</span>
+                                <span class="dropdown-item">???</span>
+                                <span class="dropdown-item">???</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-warning" type="button">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                </div>
+            </div>
+            <div class="col-md-2">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10">
+
+            </div>
+            <div class="col-md-2">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link">Previous</a></li>
+                        <li class="page-item"><a class="page-link">1</a></li>
+                        <li class="page-item"><a class="page-link">2</a></li>
+                        <li class="page-item"><a class="page-link">3</a></li>
+                        <li class="page-item"><a class="page-link">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="row" style="margin:15px;">
+            <table class="table table-hover ">
+                <thead style=" background:#ffc107">
+                    <tr>
+                        <th scope="col">Job Name</th>
+                        <th scope="col">Agency</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Categories</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-click="agency()">
+                        <th scope="row">Championship Implementation</th>
+                        <td>2007 World Lacrosse Tournament</td> 
+                        <td>Recreational Management</td>
+                        <td>Halifax,NS</td>
+                        <td>???</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Therapist</th>
+                        <td>Atlantic Health Promotion Research Centre</td>
+                        <td>HPRO</td>
+                        <td>Halifax, NS</td>
+                        <td>???</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Therapist</th>
+                        <td>New Hampshire Hospital</td>
+                        <td>TR</td>
+                        <td>Concord, New Hampshire</td>
+                        <td>???</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <div class="col-md-10">
+
+            </div>
+            <div class="col-md-2">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link">Previous</a></li>
+                        <li class="page-item"><a class="page-link">1</a></li>
+                        <li class="page-item"><a class="page-link">2</a></li>
+                        <li class="page-item"><a class="page-link">3</a></li>
+                        <li class="page-item"><a class="page-link">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>

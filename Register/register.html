@@ -1,0 +1,107 @@
+<div class="back">
+    <div ng-app="internApp" ng-controller="registerCtrl" style="height: 100%;">
+
+        <div class="row" style="padding-top: 60px;height: 600px;">
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-5 loginBox">
+                <div style="margin: auto;width: 50%;">
+                    <form class="needs-validation" novalidate>
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Name" required>
+                                <div class="invalid-feedback">
+                                    Please provide your name
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="bannerId">Banner ID</label>
+                                <input type="text" class="form-control" id="bannerId" placeholder="Banner ID" required>
+                                <div class="invalid-feedback">
+                                    Please provide your bannerId
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-12 mb-3">
+                                <label for="email">Email Id</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                    </div>
+                                    <input type="text" class="form-control" id="email" placeholder="Email"
+                                        aria-describedby="inputGroupPrepend" required>
+                                    <div class="invalid-feedback">
+                                        Please enter your email Id
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <label for="name">Program</label>
+                                <input type="text" class="form-control" id="program" placeholder="Program" required>
+                                <div class="invalid-feedback">
+                                    Please provide your program
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="bannerId">Year</label>
+                                <input type="text" class="form-control" id="year" placeholder="Year" required>
+                                <div class="invalid-feedback">
+                                    Please provide your year
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-12">
+                              <input type="text" readonly class="form-control-plaintext"  value="Please enter your three main ares of job interest">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-4 mb-3">
+                                <label for="interest1">Interest 1</label>
+                                <input type="text" class="form-control" id="interest1" placeholder="Interest 1"
+                                    required>
+                                <div class="invalid-feedback">
+                                    Please provide an interest
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="interest2">Interest 2</label>
+                                <input type="text" class="form-control" id="interest2" placeholder="Interest 2"
+                                    required>
+                                <div class="invalid-feedback">
+                                    Please provide an interest.
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="interest3">Interest 3</label>
+                                <input type="text" class="form-control" id="interest3" placeholder="Interest 3"
+                                    required>
+                                <div class="invalid-feedback">
+                                    Please provide an interest.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                <label class="form-check-label" for="invalidCheck">
+                                    Agree to terms and conditions
+                                </label>
+                                <div class="invalid-feedback">
+                                    You must agree before submitting.
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" type="submit" ng-click="validation()">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

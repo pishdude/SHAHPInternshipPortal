@@ -1,0 +1,18 @@
+.navbar{
+    background-color: #1c1e20;
+    height: 35%;
+    margin-right: 0px;
+    color: silver;
+}
+
+.back{
+    background: #07375b;
+    background-image: url(https://cdn.dal.ca/content/dam/dalhousie/images/webteam/login/dalonline.jpg), linear-gradient(to top, #27577b, #07375b); 
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+.row{
+    margin-right: 0px;
+}
