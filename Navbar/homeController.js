@@ -21,6 +21,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
             url:"/home",
             templateUrl: "../StudentHome/studentHome.html"
         })
+        .state("student.studMgmt", {
+            url:"/studMgmt",
+            templateUrl: "../StudentManagement/studMgmt.html"
+        })
         .state("student.search", {
             url:"/search",
             templateUrl: "../Search/search.html"
