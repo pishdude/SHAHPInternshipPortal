@@ -1,13 +1,13 @@
 app.controller("loginCtrl", function($scope) {
     $scope.name = "John";
-
+    $scope.path="file:///D:/Work/InternshipPortal/SHAHPInternshipPortal/Navbar/home.html#!/"
     $scope.register = function() {
       console.log(window.location.href+"register")
-      window.location.href ="file:///D:/Work/Angular%20js/Navbar/home.html#!/"+"register";
+      window.location.href =$scope.path+"register";
     };
     $scope.login = function () {
       console.log(window.location.href + "register")
-      window.location.href = "file:///D:/Work/Angular%20js/Navbar/home.html#!/" + "student/home";
+      window.location.href = $scope.path + "student/home";
   };
  
   });

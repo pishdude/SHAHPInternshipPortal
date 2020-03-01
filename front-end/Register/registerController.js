@@ -1,6 +1,6 @@
 app.controller("registerCtrl", function($scope) {
     $scope.name = "John";
-    
+    $scope.path="file:///D:/Work/InternshipPortal/SHAHPInternshipPortal/Navbar/home.html#!/"
     $scope.validation= function(){
         var forms = document.getElementsByClassName('needs-validation');
         var validation = Array.prototype.filter.call(forms, function (form) {
