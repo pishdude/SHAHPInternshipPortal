@@ -11,14 +11,14 @@
                         <div class="form-row">
                             <div class="col-md-6 mb-3">
                                 <label for="name">Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="Name" required>
+                                <input type="text" class="form-control" id="name" placeholder="Name" ng-model="name" required>
                                 <div class="invalid-feedback">
                                     Please provide your name
                                 </div>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="bannerId">Banner ID</label>
-                                <input type="text" class="form-control" id="bannerId" placeholder="Banner ID" required>
+                                <input type="text" class="form-control" id="bannerId" placeholder="Banner ID" ng-model="ban" required>
                                 <div class="invalid-feedback">
                                     Please provide your bannerId
                                 </div>
@@ -32,9 +32,24 @@
                                         <span class="input-group-text" id="inputGroupPrepend">@</span>
                                     </div>
                                     <input type="text" class="form-control" id="email" placeholder="Email"
-                                        aria-describedby="inputGroupPrepend" required>
+                                        aria-describedby="inputGroupPrepend"  ng-model="email" required>
                                     <div class="invalid-feedback">
                                         Please enter your email Id
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-12 mb-3">
+                                <label for="email">Password</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroupPrepend">P</span>
+                                    </div>
+                                    <input type="text" class="form-control" id="email"  ng-model="password" placeholder="Password"
+                                        aria-describedby="inputGroupPrepend" required>
+                                    <div class="invalid-feedback">
+                                        Please enter your password
                                     </div>
                                 </div>
                             </div>

@@ -1,6 +1,6 @@
 app.controller("sideCtrl", function ($scope) {
     $scope.name = "John";
-    $scope.path="file:///D:/Work/InternshipPortal/SHAHPInternshipPortal/Navbar/home.html#!/"
+   $scope.path="file:///D:/Work/InternshipPortal/SHAHPInternshipPortal/front-end/Navbar/home.html#!/"
     $scope.togg = function () {
         document.getElementById("sidebar").classList.toggle('active')
     }

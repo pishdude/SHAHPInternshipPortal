@@ -1,5 +1,5 @@
 app.controller("studentCtrl", function($scope) {
-  $scope.path="file:///D:/Work/InternshipPortal/SHAHPInternshipPortal/Navbar/home.html#!/";
+ $scope.path="file:///D:/Work/InternshipPortal/SHAHPInternshipPortal/front-end/Navbar/home.html#!/";
     $scope.city = "Select City";
     $scope.state ="Select State";
     $scope.category = "Select Category"; 

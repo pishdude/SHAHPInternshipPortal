@@ -1,5 +1,5 @@
 app.controller("studMgmtCtrl", function($scope) {
-    $scope.path="file:///D:/Work/InternshipPortal/SHAHPInternshipPortal/Navbar/home.html#!/"
+   $scope.path="file:///D:/Work/InternshipPortal/SHAHPInternshipPortal/front-end/Navbar/home.html#!/"
 
     $scope.searchType =false;
 
