@@ -14,14 +14,14 @@ class DevelopmentConfig(Config):
     # uncomment the line below to use postgres
     # SQLALCHEMY_DATABASE_URI = postgres_local_base
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = 'mysql://root:kutty007@localhost/flask' 
+    SQLALCHEMY_DATABASE_URI = 'mysql://user:Qwerty@1@35.153.105.212/cloud' 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
 class TestingConfig(Config):
     DEBUG = True
     TESTING = True
-    SQLALCHEMY_DATABASE_URI = 'mysql://root:kutty007@localhost/flask' 
+    SQLALCHEMY_DATABASE_URI = 'mysql://user:Qwerty@1@35.153.105.212/cloud' 
     PRESERVE_CONTEXT_ON_EXCEPTION = False
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
