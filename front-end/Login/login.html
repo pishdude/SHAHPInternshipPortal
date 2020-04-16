@@ -12,19 +12,25 @@
                     <img src="../assets/dal-logo-bw.png" width="232" height="57" alt="Dalhousie University" />
 
                     <br><br><br>
-                    <form>
+                    <form class="needs-validation" >
                         <div class="form-group">
                             <label for="email">Email address</label>
-                            <input type="email" class="form-control" id="email" aria-describedby="bannerId"
-                                placeholder="Enter email">
+                            <input type="text" class="form-control" id="email" ng-model="email" required aria-describedby="bannerId"
+                                placeholder="Enter email" required>
+                                <div class="invalid-feedback">
+                                    Please provide your name
+                                </div>
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Password">
+                            <input type="password" class="form-control" id="password" ng-model="password" placeholder="Password" required>
+                            <div class="invalid-feedback">
+                                Please provide your name
+                            </div>
                         </div>
                         <button type="button" class="btn btn-link" style="padding: 0;width: fit-content;">Forgot
                             Password?</button>
-                        <button  class="btn btn-primary" style="float: right;" ng-click="login()">Login</button>
+                        <button  class="btn btn-primary" style="float: right;" ng-click="validation()">Login</button>
                         <br><br>
                         <button type="button" ng-click="register()" class="btn btn-secondary" style="float: right;">New User?Register
                             here</button>

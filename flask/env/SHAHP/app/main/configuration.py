@@ -16,7 +16,10 @@ class DevelopmentConfig(Config):
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = 'mysql://root:kutty007@localhost/flask' 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-
+    SQLALCHEMY_BINDS = {
+        'users': 'mysql://root:kutty007@localhost/internship_portal',
+        'aut': SQLALCHEMY_DATABASE_URI
+    }
 
 class TestingConfig(Config):
     DEBUG = True
@@ -31,11 +34,16 @@ class ProductionConfig(Config):
     # uncomment the line below to use postgres
     # SQLALCHEMY_DATABASE_URI = postgres_local_base
 
+class MainDB(Config):
+    DEBUG = True
+    SQLALCHEMY_DATABASE_URI = 'mysql://root:kutty007@localhost/internship_portal' 
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 config_by_name = dict(
     dev=DevelopmentConfig,
     test=TestingConfig,
-    prod=ProductionConfig
+    prod=ProductionConfig,
+    main=MainDB
 )
 
 key = Config.SECRET_KEY

@@ -8,7 +8,7 @@
             <div class="col-md-5 loginBox">
                 <div style="margin: auto;width: 50%;">
                     <form class="needs-validation" novalidate>
-                        <div class="form-row">
+                        <div class="form-row"> 
                             <div class="col-md-6 mb-3">
                                 <label for="name">Name</label>
                                 <input type="text" class="form-control" id="name" placeholder="Name" ng-model="name" required>
@@ -57,14 +57,14 @@
                         <div class="form-row">
                             <div class="col-md-6 mb-3">
                                 <label for="name">Program</label>
-                                <input type="text" class="form-control" id="program" placeholder="Program" required>
+                                <input type="text" class="form-control" id="program" ng-model="program" placeholder="Program" required>
                                 <div class="invalid-feedback">
                                     Please provide your program
                                 </div>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="bannerId">Year</label>
-                                <input type="text" class="form-control" id="year" placeholder="Year" required>
+                                <input type="text" class="form-control" id="year"  ng-model="year" placeholder="Year" required>
                                 <div class="invalid-feedback">
                                     Please provide your year
                                 </div>

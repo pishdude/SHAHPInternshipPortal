@@ -3,7 +3,7 @@ app.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
     $urlRouterProvider.otherwise('/login');  
     
     $httpProvider.defaults.headers.common = { 
-        'Authorization': 'JWT ' + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1ODMzOTQwMjgsInN1YiI6MSwiZXhwIjoxNTgzNDgwNDMzfQ.CNPfaO6Q6DVHx_5LEoi8pyooCz1PIao5maVEXkAVUCA",
+        'Authorization': 'JWT ' + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1ODQwNjM5MTQsInN1YiI6MiwiZXhwIjoxNTg0MjM2NzE5fQ.qDWn7VGRwjkrQ5-P7tQ4W42kbv0VQJn5IUQrPo1ELL8",
         'Accept': 'application/json;odata=verbose'
       };
     $stateProvider

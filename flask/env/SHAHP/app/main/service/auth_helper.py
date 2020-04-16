@@ -9,7 +9,7 @@ class Auth:
         try:
             # fetch the user data
             user = User.query.filter_by(email=data.get('email')).first()
-            if user and user.check_password(data.get('password')):
+            if user and user.check_password(data.get('password')) and user.activated:
                 auth_token = user.encode_auth_token(user.id)
                 if auth_token:
                     response_object = {
@@ -35,9 +35,11 @@ class Auth:
 
     @staticmethod
     def logout_user(data):
+        print("data"+data)
         if data:
-            print(data)
+            #print(data)
             auth_token = data.split(" ")[1]
+            print(auth_token)
         else:
             auth_token = ''
         if auth_token:

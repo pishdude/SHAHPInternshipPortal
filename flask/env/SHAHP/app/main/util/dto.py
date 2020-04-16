@@ -16,3 +16,15 @@ class AuthDto:
         'email': fields.String(required=True, description='The email address'),
         'password': fields.String(required=True, description='The user password '),
     })
+
+
+class StudentDto:
+    api = Namespace('student', description='user related operations')
+    student = api.model('student', {
+        'email': fields.String(required=True, description='user email address'),
+        'username': fields.String(required=True, description='user username'),
+        'password': fields.String(required=True, description='user password'),
+        'bannerId': fields.String(description='user Identifier'),
+        'program': fields.String(description='user Identifier'),
+        'year': fields.String(description='user Identifier'),
+    })

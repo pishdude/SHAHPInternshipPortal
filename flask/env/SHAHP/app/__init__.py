@@ -13,5 +13,5 @@ api = Api(blueprint,
           description='a boilerplate for flask restplus web service'
           )
 
-api.add_namespace(user_ns, path='/user')
+api.add_namespace(user_ns, path='/student')
 api.add_namespace(auth_ns)

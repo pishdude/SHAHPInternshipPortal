@@ -16,6 +16,7 @@ class User(db.Model):
     public_id = db.Column(db.String(100), unique=True)
     username = db.Column(db.String(50), unique=True)
     password_hash = db.Column(db.String(100))
+    activated = db.Column(db.Boolean, nullable=False, default=False)
 
     @property
     def password(self):
@@ -36,9 +37,10 @@ class User(db.Model):
         Generates the Auth Token
         :return: string
         """
+        print(datetime.datetime.utcnow() + datetime.timedelta(days=2, seconds=5))
         try:
             payload = {
-                'exp': datetime.datetime.utcnow() + datetime.timedelta(days=1, seconds=5),
+                'exp': datetime.datetime.utcnow() + datetime.timedelta(days=2, seconds=5),
                 'iat': datetime.datetime.utcnow(),
                 'sub': user_id
             }
@@ -59,12 +61,14 @@ class User(db.Model):
         """
         try:
             payload = jwt.decode(auth_token, key)
+            #print(payload['sub'])
             is_blacklisted_token = BlacklistToken.check_blacklist(auth_token)
             if is_blacklisted_token:
                 return 'Token blacklisted. Please log in again.'
             else:
                 return payload['sub']
         except jwt.ExpiredSignatureError:
+            print("hi\n")
             return 'Signature expired. Please log in again.'
         except jwt.InvalidTokenError:
             return 'Invalid token. Please log in again.'

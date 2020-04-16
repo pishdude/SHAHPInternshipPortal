@@ -1,4 +1,4 @@
-app.controller("registerCtrl",['$scope', 'dataFactory',function($scope,dataFactory) {
+app.controller("registerCtrl",['$scope', 'loginService',function($scope,loginService) {
     $scope.path="file:///D:/Work/InternshipPortal/SHAHPInternshipPortal/front-end/Navbar/home.html#!/"
     $scope.validation= function(){
         var forms = document.getElementsByClassName('needs-validation');
@@ -9,7 +9,7 @@ app.controller("registerCtrl",['$scope', 'dataFactory',function($scope,dataFacto
                     event.stopPropagation();
                 }
                 form.classList.add('was-validated');
-                $scope.insertCustomer();
+                $scope.registerStudent();
         });
     }
 
@@ -18,15 +18,18 @@ app.controller("registerCtrl",['$scope', 'dataFactory',function($scope,dataFacto
     $scope.password='';
     $scope.email='';
 
-    $scope.insertCustomer = function () {
+    $scope.registerStudent = function () {
         //Fake customer data
         var cust = {
                 "username": $scope.name,
                 "password":  $scope.password,
                 "public_id":  $scope.ban,
-                "email":  $scope.email
+                "email":  $scope.email,
+                "program": $scope.program,
+                "year":$scope.year,
+                "bannerId":$scope.ban
               }
-        dataFactory.insertCustomer(cust)
+        loginService.insertStudent(cust)
             .then(function (response) {
                 console.log(response)
             }, function(error) {

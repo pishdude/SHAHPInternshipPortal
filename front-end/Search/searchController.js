@@ -1,4 +1,4 @@
-app.controller("searchCtrl", ['$scope', 'dataFactory',function($scope,dataFactory) {
+app.controller("searchCtrl", ['$scope' ,function() {
  $scope.path="file:///D:/Work/InternshipPortal/SHAHPInternshipPortal/front-end/Navbar/home.html#!/"
     $scope.city = "Select City";
     $scope.state ="Select State";
@@ -7,16 +7,7 @@ app.controller("searchCtrl", ['$scope', 'dataFactory',function($scope,dataFactor
     getCustomers();
 
     function getCustomers() {
-      var cust = {
-        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1ODMzOTQwMjgsInN1YiI6MSwiZXhwIjoxNTgzNDgwNDMzfQ.CNPfaO6Q6DVHx_5LEoi8pyooCz1PIao5maVEXkAVUCA",
-        
-      }
-        dataFactory.logout(cust)
-            .then(function (response) {
-                $scope.customers = response.data;
-            }, function (error) {
-                $scope.status = 'Unable to load customer data: ' + error.message;
-            });
+     
     }
     $scope.agency = function () {
       console.log(window.location.href + "register")
