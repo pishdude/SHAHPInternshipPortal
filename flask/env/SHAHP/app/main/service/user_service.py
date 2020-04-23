@@ -2,9 +2,9 @@ import uuid
 import datetime
 
 from app.main import db
-from app.main import db2
 from app.main.model.user import User
 from app.main.model.models import Student
+from app.main.model.models import StudentInterests
 import smtplib, ssl
 
 
@@ -19,8 +19,9 @@ def save_new_user(data):
             password=data['password'],
             registered_on=datetime.datetime.utcnow()
         )
+        print(data['interests'])
         save_changes(new_user)
-        return add_user(data)
+        return add_student(data)
     else:
         response_object = {
             'status': 'fail',
@@ -38,6 +39,7 @@ def get_a_user(public_id):
 
 
 def save_changes(data):
+    #print(data)
     db.session.add(data)
     db.session.commit()
 
@@ -58,7 +60,7 @@ def generate_token(user):
         }
         return response_object, 401
 
-def add_user(data):
+def add_student(data):
     try:
         new_student= Student(
             bannerId = data['bannerId'],
@@ -69,6 +71,7 @@ def add_user(data):
         )
 
         save_changes(new_student)
+        add_interests(data)
         mail()
         response_object = {
             'status': 'success',
@@ -82,24 +85,26 @@ def add_user(data):
         }
         return response_object, 401
 
-def notifMail():
-    port = 587  # For starttls
-    smtp_server = "smtp.gmail.com"
-    sender_email = "my@gmail.com"
-    receiver_email = "your@gmail.com"
-    password = "kutty007"
-    message = """\
-    Subject: Hi there
-
-    This message is sent from Python."""
-
-    context = ssl.create_default_context()
-    server=smtplib.SMTP(smtp_server, port) 
-    server.ehlo()  # Can be omitted
-    server.starttls(context)
-    server.ehlo()  # Can be omitted
-    server.login(sender_email, password)
-    server.sendmail(sender_email, receiver_email, message)
+def add_interests(data):
+    try:
+        for d in data['interests']:
+            print(d)
+            new_interest = StudentInterests(
+                bannerId = data['bannerId'],
+                interest  = d
+            )
+            save_changes(new_interest)
+        response_object = {
+            'status': 'success',
+            'message': 'Successfully registered.'           
+        }
+        return response_object, 201
+    except Exception as e:
+        response_object = {
+            'status': 'fail',
+            'message': 'Some error occurred. Please try again.'
+        }
+        return response_object, 401
 
 def mail():
     
@@ -107,7 +112,7 @@ def mail():
     smtp_server = "smtp.gmail.com"
     sender_email = "hariarunachalam27@gmail.com"  # Enter your address
     receiver_email = "hariarunachalam27@gmail.com"  # Enter receiver address
-    password = "kutty007"
+    password = "ynwmrwprdnbhihwh"
     message = """\
     Subject: Hi there
 

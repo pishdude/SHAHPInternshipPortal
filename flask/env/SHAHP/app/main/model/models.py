@@ -42,7 +42,13 @@ class Student(db.Model):
     email = db.Column(db.String(45), nullable=False)
     program = db.Column(db.String(45), nullable=False)
     year = db.Column(db.String(45), nullable=False)
+    interests = []
 
+class StudentInterests(db.Model):
+    __tablename__ = 'studentinterests'
+    __bind_key__ = 'users'
+    bannerId = db.Column(db.String(9))
+    interest = db.Column(db.String(45), primary_key=True)
 
 """class Studentsupp(Student):
     __tablename__ = 'studentsupp'
@@ -87,18 +93,14 @@ t_location = db.Table(
     db.Column('Province', db.String(45), nullable=False),
     db.Column('Address', db.String(45), nullable=False),
     db.Column('idAgency', db.ForeignKey(u'agency.idAgency'), nullable=False, index=True)
-)
+)"""
 
 
 
-t_studentinterests = db.Table(
-    'studentinterests',
-    db.Column('bannerId', db.ForeignKey(u'student.bannerId'), nullable=False, index=True),
-    db.Column('interest', db.String(45), nullable=False)
-)
 
 
 
+"""
 class Supervisor(db.Model):
     __tablename__ = 'supervisor'
 

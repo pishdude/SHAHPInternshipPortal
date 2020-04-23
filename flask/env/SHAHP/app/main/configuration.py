@@ -14,11 +14,11 @@ class DevelopmentConfig(Config):
     # uncomment the line below to use postgres
     # SQLALCHEMY_DATABASE_URI = postgres_local_base
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = 'mysql://user:Qwerty@1@35.153.105.212/cloud' 
+    SQLALCHEMY_DATABASE_URI = 'mysql://root:kutty007@localhost/internship_auth' 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_BINDS = {
         'users': 'mysql://root:kutty007@localhost/internship_portal',
-        'aut': SQLALCHEMY_DATABASE_URI
+        'auth': SQLALCHEMY_DATABASE_URI
     }
 
 class TestingConfig(Config):

@@ -3,7 +3,7 @@ from flask_restplus import Resource
 
 from ..util.dto import UserDto,StudentDto
 from ..service.user_service import save_new_user, get_all_users, get_a_user
-
+from ..service.student_service import get_Student
 api = StudentDto.api
 _user = UserDto.user
 _student = StudentDto.student
@@ -15,7 +15,7 @@ class UserList(Resource):
     @api.marshal_list_with(_student, envelope='data')
     def get(self):
         """List all registered users"""
-        return get_all_users()
+        return get_Student()
 
     @api.response(201, 'User successfully created.')
     @api.doc('create a new user')

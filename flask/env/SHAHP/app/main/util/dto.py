@@ -27,4 +27,5 @@ class StudentDto:
         'bannerId': fields.String(description='user Identifier'),
         'program': fields.String(description='user Identifier'),
         'year': fields.String(description='user Identifier'),
+        'interests': fields.List(fields.String,description='user Identifier')
     })
