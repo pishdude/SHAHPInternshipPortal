@@ -17,17 +17,22 @@ app.controller("registerCtrl",['$scope', 'loginService',function($scope,loginSer
     $scope.ban='';
     $scope.password='';
     $scope.email='';
+    $scope.interest1 ='';
+    $scope.interest2 ='';
+    $scope.interest3 ='';
 
     $scope.registerStudent = function () {
         //Fake customer data
         var cust = {
                 "username": $scope.name,
+                "name": $scope.name,
                 "password":  $scope.password,
                 "public_id":  $scope.ban,
                 "email":  $scope.email,
                 "program": $scope.program,
                 "year":$scope.year,
-                "bannerId":$scope.ban
+                "bannerId":$scope.ban,
+                "interests":  [ $scope.interest1, $scope.interest2, $scope.interest3]
               }
         loginService.insertStudent(cust)
             .then(function (response) {

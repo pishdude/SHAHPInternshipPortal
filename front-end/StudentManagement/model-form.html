@@ -1,0 +1,87 @@
+<div class="faded">
+    <div class="modal-header">
+        <h3 class="modal-title" id="modal-title"> {{pc.data.name}} - Details</h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+        <div class="row" style="padding-top: 60px;">
+            <div class="col-md-2">
+
+            </div>
+            <div class="col-md-10">
+                <form>
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <label for="CGPA">CGPA</label>
+                            <input type="text" class="form-control" id="CGPA" placeholder="CGPA"
+                                ng-model="pc.data.cgpa">
+                        </div>
+                        
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <label for="criminalCheck">Criminal Check</label>
+                            <select name="criminalCheck" ng-model="pc.data.criminalCheck"  id="criminalCheck" class="form-control">  
+                                <option ng-repeat="i in pc.listItems" value="{{i}}">  
+                                     {{i}}  
+                                </option>  
+                           </select> 
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="childAbuse">Child Abuse</label>
+                            <select name="childAbuse" ng-model="pc.data.childAbuse"  id="childAbuse" class="form-control">  
+                                <option ng-repeat="i in pc.listItems" value="{{i}}">  
+                                     {{i}}  
+                                </option>  
+                           </select> 
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <label for="CPR">CPR</label>
+                            <select name="CPR" ng-model="pc.data.CPR"  id="CPR" class="form-control">  
+                                <option ng-repeat="i in pc.listItems" value="{{i}}">  
+                                     {{i}}  
+                                </option>  
+                           </select> 
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="immunizations">Immunizations</label>
+                            <select name="immunizations" ng-model="pc.data.immunizations"  id="immunizations" class="form-control">  
+                                <option ng-repeat="i in pc.listItems" value="{{i}}">  
+                                     {{i}}  
+                                </option>  
+                           </select> 
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <label for="offerReceived">Offer Received</label>
+                            <select name="offerReceived" ng-model="pc.data.offerReceived"  id="offerReceived" class="form-control">  
+                                <option ng-repeat="i in pc.listItems" value="{{i}}">  
+                                     {{i}}  
+                                </option>  
+                           </select> 
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="acceptanceForm">Acceptance Form</label>
+                            <select name="acceptanceForm" ng-model="pc.data.acceptanceForm"  id="acceptanceForm" class="form-control">  
+                                <option ng-repeat="i in pc.listItems" value="{{i}}">  
+                                     {{i}}  
+                                </option>  
+                           </select> 
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+        <ul>
+            {{pc.data.cgpa}}
+            {{student.name}}
+        </ul>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="pc.ok()">OK</button>
+        <button class="btn btn-warning" type="button" ng-click="pc.cancel()">Cancel</button>
+    </div>
+</div>

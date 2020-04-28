@@ -1,11 +1,8 @@
-var app = angular.module("internApp", ['ui.router']);
+var app = angular.module("internApp", ['ui.router','ui.bootstrap']);
 app.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
     $urlRouterProvider.otherwise('/login');  
     
-    $httpProvider.defaults.headers.common = { 
-        'Authorization': 'JWT ' + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1ODQwNjM5MTQsInN1YiI6MiwiZXhwIjoxNTg0MjM2NzE5fQ.qDWn7VGRwjkrQ5-P7tQ4W42kbv0VQJn5IUQrPo1ELL8",
-        'Accept': 'application/json;odata=verbose'
-      };
+    
     $stateProvider
         .state('login', {
         url: '/login',

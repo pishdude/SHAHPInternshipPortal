@@ -7,17 +7,6 @@ from .. import db
 
 
 
-class Agency(db.Model):
-    managed=False
-    __tablename__ = 'agency'
-    __bind_key__ = 'users'
-    idAgency = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(45))
-    type = db.Column(db.String(45))
-    description = db.Column(db.String(45))
-
-
-
 """class Authtable(db.Model):
     __tablename__ = 'authtable'
     __bind_key__ = 'users'
@@ -43,6 +32,15 @@ class Student(db.Model):
     program = db.Column(db.String(45), nullable=False)
     year = db.Column(db.String(45), nullable=False)
     interests = []
+    cgpa = ''
+    criminalCheck = ''
+    childAbuse = ''
+    CPR = ''
+    immunizations = ''
+    offerReceived = ''
+    acceptanceForm = ''
+    count =''
+    activated = False
 
 class StudentInterests(db.Model):
     __tablename__ = 'studentinterests'
@@ -50,63 +48,67 @@ class StudentInterests(db.Model):
     bannerId = db.Column(db.String(9))
     interest = db.Column(db.String(45), primary_key=True)
 
-"""class Studentsupp(Student):
+class StudentSupp(db.Model):
     __tablename__ = 'studentsupp'
-
-    bannerId = db.Column(db.ForeignKey(u'student.bannerId'), primary_key=True)
-    cgpa = db.Column(db.String(45))
-    criminalCheck = db.Column(db.String(45))
-
-
-
-t_categories = db.Table(
-    'categories',
-    db.Column('idAgency', db.ForeignKey(u'agency.idAgency'), nullable=False, index=True),
-    db.Column('category', db.String(45), nullable=False)
-)
+    __bind_key__ = 'users'
+    bannerId = db.Column(db.String(9), primary_key=True)
+    cgpa = db.Column(db.String(45),nullable = True)
+    criminalCheck = db.Column(db.String(5), nullable=False, default="false")
+    childAbuse = db.Column(db.String(5), nullable=False, default="false")
+    CPR = db.Column(db.String(5), nullable=False, default="false")
+    immunizations = db.Column(db.String(5), nullable=False, default="false")
+    offerReceived = db.Column(db.String(5), nullable=False, default="false")
+    acceptanceForm = db.Column(db.String(5), nullable=False, default="false")
 
 
 
-class Job(db.Model):
-    __tablename__ = 'job'
-
-    idJob = db.Column(db.Integer, primary_key=True)
-    idAgency = db.Column(db.ForeignKey(u'agency.idAgency'), nullable=False, index=True)
+class Agency(db.Model):
+    managed=False
+    __tablename__ = 'agency'
+    __bind_key__ = 'users'
+    idAgency = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(45))
+    type = db.Column(db.String(45))
     description = db.Column(db.String(45))
+    count =''
+    locations =[]
+    supervisors = ''
+    catgories =[]
+    applicationprocedure =''
 
-    agency = db.relationship(u'Agency', primaryjoin='Job.idAgency == Agency.idAgency', backref=u'jobs')
+# class Job(db.Model):
+#     __tablename__ = 'job'
+#     __bind_key__ = 'users'
+#     idJob = db.Column(db.Integer, primary_key=True)
+#     idAgency = db.Column(db.Integer, nullable=False, index=True)
+#     name = db.Column(db.String(45))
+    # description = db.Column(db.String(45))
 
-
-class Applicationprocedure(Job):
-    __tablename__ = 'applicationprocedure'
-
-    idJob = db.Column(db.ForeignKey(u'job.idJob'), primary_key=True)
-    website = db.Column(db.String(45))
-    contactDirect = db.Column(db.String(1))
-
-
-
-t_location = db.Table(
-    'location',
-    db.Column('City', db.String(45), nullable=False),
-    db.Column('Province', db.String(45), nullable=False),
-    db.Column('Address', db.String(45), nullable=False),
-    db.Column('idAgency', db.ForeignKey(u'agency.idAgency'), nullable=False, index=True)
-)"""
-
-
-
-
-
-
-"""
+class Location(db.Model):
+    __tablename__ = 'location'
+    __bind_key__ = 'users'
+    City = db.Column(db.String(45), nullable=False,primary_key=True)
+    Province = db.Column(db.String(45), nullable=False)
+    Address = db.Column(db.String(45), nullable=False)
+    idAgency = db.Column(db.Integer, nullable=False, index=True,primary_key=True)
+ 
 class Supervisor(db.Model):
     __tablename__ = 'supervisor'
-
+    __bind_key__ = 'users'
     idSupervisor = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(45))
-    idJob = db.Column(db.ForeignKey(u'job.idJob'), nullable=False, index=True)
+    idAgency = db.Column(db.Integer, nullable=False)
     email = db.Column(db.String(45))
 
-    job = db.relationship(u'Job', primaryjoin='Supervisor.idJob == Job.idJob', backref=u'supervisors')"""
+class Categories(db.Model):
+    __tablename__ = 'categories'
+    __bind_key__ = 'users'
+    idAgency = db.Column(db.Integer, nullable=False, index=True,primary_key=True)
+    category = db.Column(db.String(45), nullable=False,primary_key=True)
+
+class Applicationprocedure(db.Model):
+    __tablename__ = 'applicationprocedure'
+    __bind_key__ = 'users'
+    idAgency = db.Column(db.Integer, nullable=False, index=True,primary_key=True)
+    website = db.Column(db.String(45))
+    contactDirect = db.Column(db.String(1))

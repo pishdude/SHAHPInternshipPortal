@@ -5,15 +5,15 @@ app.factory('loginService', ['$http', function($http) {
 
    
     loginService.insertStudent = function (cust) {
-        return $http.post(urlBase+'/user', cust);
+        return $http.post(urlBase+'/student/', cust);
     };
 
     loginService.login = function (student) {
-        return $http.post(urlBase+'/auth/login', student)
+        return $http.post(urlBase+'/Auth/login', student)
     };
    
     loginService.logout = function () {
-        return $http.post(urlBase + '/auth/logout' );
+        return $http.post(urlBase + '/Auth/logout' );
     };
     
     

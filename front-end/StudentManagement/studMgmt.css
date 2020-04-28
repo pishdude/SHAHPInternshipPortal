@@ -5,3 +5,101 @@
 .highLight{
     color: #ffc107;
 }
+
+.faded {
+opacity: 1;
+}
+
+.center-modal {
+  position: fixed;
+  top: 10%;
+  left: 18.5%;
+  z-index: 1050;
+  width: 80%;
+  height: 80%;
+  margin-left: -10%;
+}
+
+.alert{
+  margin: auto;
+  width:50%
+}
+    ul.pagination
+    {
+      /* //border:solid 1px #CCCCCC;
+      border-radius:5px;     */
+    }
+
+    ul.pagination li.pagination-page 
+    {
+      border-right:solid 1px #CCCCCC;
+      padding-left:15px;
+      padding-right:15px;
+    }
+
+    li.pagination-page.ng-scope.active
+    {
+      background-color:#28a745;
+    }
+
+    li.pagination-page.ng-scope a
+    {   
+      color:#999;
+    }
+
+
+    li.pagination-page.ng-scope.active a
+    {   
+      color:#FFF;
+      font-weight:bold;
+    }
+
+    ul.pagination li.pagination-prev
+    {
+      border-right:solid 1px #CCCCCC;
+      padding:10px;
+    }
+
+    ul.pagination li.pagination-prev a
+    {
+      color:#F90;   
+    }
+
+    ul.pagination li.pagination-next
+    {
+      border-right:solid 1px #CCCCCC;
+      padding:10px;
+    }
+
+    ul.pagination li.pagination-next a
+    {
+      color:#F90;   
+    }
+
+    ul.pagination li.pagination-first
+    {
+      border-right:solid 1px #CCCCCC;
+      padding:10;       
+    }
+
+    ul.pagination li.pagination-first a
+    {
+      color:#F90;   
+    }
+
+
+    ul.pagination li.pagination-last
+    {
+      padding:10px;
+    }
+
+    ul.pagination li.pagination-last a
+    {
+      color:#F90;   
+    }
+
+    ul.pagination li
+    {   
+      padding:10px;
+    }
+

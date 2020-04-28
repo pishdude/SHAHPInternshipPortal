@@ -3,8 +3,12 @@ app.factory('studentService', ['$http', function($http) {
     var urlBase = 'http://127.0.0.1:5000';
     var studentService = {};
 
-    studentService.getStudents = function () {
-        return $http.get(urlBase);
+    studentService.getStudents = function (page) {
+        return $http.get(urlBase+"/admin/"+page);
+    };
+
+    studentService.searchStudents = function (searchValue,searchType,page) {
+        return $http.get(urlBase+"/admin/search?searchValue="+searchValue+"&searchType="+searchType+"&page="+page);
     };
 
     studentService.getStudent = function (id) {
@@ -12,11 +16,15 @@ app.factory('studentService', ['$http', function($http) {
     };
 
     studentService.insertStudent = function (cust) {
-        return $http.post(urlBase, cust);
+        return $http.post(urlBase+'/admin/updateSupp/', cust);
+    };
+
+    studentService.activateStudent = function (cust) {
+        return $http.post(urlBase+'/admin/activateStud', cust);
     };
 
     studentService.updateStudent = function (cust) {
-        return $http.put(urlBase + '/' + cust.ID, cust)
+        return $http.post(urlBase+'/admin/updateSupp', cust);
     };
 
     studentService.deleteStudent = function (id) {

@@ -5,6 +5,7 @@ from app.main import db
 from app.main.model.user import User
 from app.main.model.models import Student
 from app.main.model.models import StudentInterests
+from app.main.model.models import StudentSupp
 import smtplib, ssl
 
 
@@ -69,22 +70,39 @@ def add_student(data):
             program = data['program'],
             year =  data['year']
         )
-
         save_changes(new_student)
-        add_interests(data)
-        mail()
-        response_object = {
-            'status': 'success',
-            'message': 'Successfully registered.'           
-        }
-        return response_object, 201
+        
+        return add_Student_Supp(data)
+        # add_interests(data)
+        # mail()
+        # response_object = {
+        #     'status': 'success',
+        #     'message': 'Successfully registered.'           
+        # }
+        # return response_object, 201
     except Exception as e:
         response_object = {
             'status': 'fail',
-            'message': 'Some error occurred. Please try again.'
+            'message': 'Some error occurred in add_student. Please try again.' + str(e)
         }
         return response_object, 401
 
+def add_Student_Supp(data):
+    try:
+        student_Supp = StudentSupp(
+             bannerId = data['bannerId'],
+             cgpa = None
+        )
+        
+        save_changes(student_Supp)
+        return add_interests(data)
+        
+    except Exception as e:
+        response_object = {
+            'status': 'fail',
+            'message': 'Some error occurred in add_student. Please try again.' + str(e)
+        }
+        return response_object, 401 
 def add_interests(data):
     try:
         for d in data['interests']:

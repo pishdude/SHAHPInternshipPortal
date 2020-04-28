@@ -1,4 +1,4 @@
-app.controller("searchCtrl", ['$scope' ,function() {
+app.controller("searchCtrl", ['$scope' ,function($scope) {
  $scope.path="file:///D:/Work/InternshipPortal/SHAHPInternshipPortal/front-end/Navbar/home.html#!/"
     $scope.city = "Select City";
     $scope.state ="Select State";
