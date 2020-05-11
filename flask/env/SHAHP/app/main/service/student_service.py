@@ -3,6 +3,7 @@ from app.main.model.user import User
 from app.main.model.models import Student
 from app.main.model.models import StudentInterests
 from app.main.model.models import StudentSupp
+# from app.main.service.auth_helper import 
 
 def save_changes(data):
     #print(data)
@@ -11,6 +12,7 @@ def save_changes(data):
 
 def get_Student(page):
     try:
+
         students = Student.query.paginate(page=int(page), error_out=False, max_per_page=1 )
         for s in students.items:
             print s.bannerId
@@ -69,7 +71,7 @@ def update_student_supp(data):
             'status': 'fail',
             'message': 'Some error occurred. Please try again.' +str (e)
         }
-        return response_object, 401
+        return response_object, 400
 
 def act_stud(data):
     try:
@@ -87,7 +89,7 @@ def act_stud(data):
             'status': 'fail',
             'message': 'Some error occurred. Please try again.'+ str (e)
         }
-        return response_object, 401
+        return response_object, 400
 
 def search_Student(searchValue,searchType,page):
     try:

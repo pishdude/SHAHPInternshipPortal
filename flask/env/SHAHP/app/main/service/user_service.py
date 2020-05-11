@@ -59,7 +59,7 @@ def generate_token(user):
             'status': 'fail',
             'message': 'Some error occurred. Please try again.'
         }
-        return response_object, 401
+        return response_object, 400
 
 def add_student(data):
     try:
@@ -85,7 +85,7 @@ def add_student(data):
             'status': 'fail',
             'message': 'Some error occurred in add_student. Please try again.' + str(e)
         }
-        return response_object, 401
+        return response_object, 400
 
 def add_Student_Supp(data):
     try:
@@ -102,7 +102,7 @@ def add_Student_Supp(data):
             'status': 'fail',
             'message': 'Some error occurred in add_student. Please try again.' + str(e)
         }
-        return response_object, 401 
+        return response_object, 400 
 def add_interests(data):
     try:
         for d in data['interests']:
@@ -112,6 +112,7 @@ def add_interests(data):
                 interest  = d
             )
             save_changes(new_interest)
+        mail(data['username'])
         response_object = {
             'status': 'success',
             'message': 'Successfully registered.'           
@@ -122,9 +123,9 @@ def add_interests(data):
             'status': 'fail',
             'message': 'Some error occurred. Please try again.'
         }
-        return response_object, 401
+        return response_object, 400
 
-def mail():
+def mail(name):
     
     port = 465  # For SSL
     smtp_server = "smtp.gmail.com"
@@ -132,9 +133,9 @@ def mail():
     receiver_email = "hariarunachalam27@gmail.com"  # Enter receiver address
     password = "ynwmrwprdnbhihwh"
     message = """\
-    Subject: Hi there
+    Subject: Internship portal verification
 
-    This message is sent from Python."""
+    A new student has registered. Please verify and activate """ + name
 
     context = ssl.create_default_context()
     server = smtplib.SMTP_SSL(smtp_server, port) 

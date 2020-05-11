@@ -1,4 +1,4 @@
-app.controller("registerCtrl",['$scope', 'loginService',function($scope,loginService) {
+app.controller("registerCtrl",['$scope', 'loginService','$uibModal',function($scope,loginService,$uibModal) {
     $scope.path="file:///D:/Work/InternshipPortal/SHAHPInternshipPortal/front-end/Navbar/home.html#!/"
     $scope.validation= function(){
         var forms = document.getElementsByClassName('needs-validation');
@@ -37,8 +37,50 @@ app.controller("registerCtrl",['$scope', 'loginService',function($scope,loginSer
         loginService.insertStudent(cust)
             .then(function (response) {
                 console.log(response)
+                $scope.info()
             }, function(error) {
                // $scope.status = 'Unable to insert customer: ' + error.message;
             });
     };
+
+
+    $scope.info = function (message, student) {
+        console.log("hi")
+        var modalInstance = $uibModal.open({
+          animation: true,
+          ariaLabelledBy: 'modal-title',
+          ariaDescribedBy: 'modal-body',
+          templateUrl: './../Register/model-info.html',
+          controller: 'ModalConfirmCtrl',
+          controllerAs: 'pc',
+          keyboard: false,
+          //  size: "lg",
+          windowClass: 'show center-modal',
+          resolve: {
+            data: function () {
+              //pc.data = message
+              //return pc.data;
+            }
+          }
+        });
+    
+        modalInstance.result.then(function () {
+          window.location.href = $scope.path + "login";
+        });
+      };
+
+    
   }]);
+
+  app.controller('ModalConfirmCtrl', function ($uibModalInstance, studentService, data, $rootScope) {
+    var pc = this;
+    pc.data = data;
+  
+    pc.ok = function () {
+     
+      $uibModalInstance.close("save");
+  
+    };
+  
+    
+});

@@ -3,15 +3,17 @@ from flask_restplus import Resource
 
 from ..util.dto import StudentAdminDto
 from ..service.student_service import update_student_supp,get_Student,act_stud,search_Student
-
+from ..util.decorator import token_required
 api = StudentAdminDto.api
 _update = StudentAdminDto.update
+
 
 @api.route('/<page>')
 @api.param('page', 'Page')
 class studentList(Resource):
     @api.doc('list_of_registered_students')
     @api.marshal_list_with(StudentAdminDto.student, envelope='data')
+    @token_required
     def get(self,page):
         """List all registered users"""
         return get_Student(page)

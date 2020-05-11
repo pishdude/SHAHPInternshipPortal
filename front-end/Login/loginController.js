@@ -33,6 +33,7 @@ app.controller("loginCtrl",['$scope', 'loginService','$http',function($scope,log
         console.log(response)
         res =response.data
         $http.defaults.headers.common.Authorization = 'jwt ' + res.Authorization;
+        window.sessionStorage.setItem("token",'jwt ' + res.Authorization)
         window.location.href = $scope.path + "student/home";
       }, function (error) {
         // $scope.status = 'Unable to insert customer: ' + error.message;

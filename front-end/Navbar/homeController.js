@@ -1,5 +1,25 @@
 var app = angular.module("internApp", ['ui.router','ui.bootstrap']);
 app.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
+    
+    $httpProvider.interceptors.push(function() {
+        return {
+          response: function(res) {
+            /* This is the code that transforms the response. `res.data` is the
+             * response body */
+           // res.data = { data: data };
+            //res.data.meta = { status: res.status };
+            // console.log("i ma here")
+            // console.log(res.status)
+
+            if(res.status == 401){
+                alert("Session timed out.Please log back in ")
+                window.location.href = "file:///D:/Work/InternshipPortal/SHAHPInternshipPortal/front-end/Navbar/home.html#!/"+ "login";
+            }
+            return res;
+          }
+        };
+      });
+
     $urlRouterProvider.otherwise('/login');  
     
     
@@ -52,6 +72,13 @@ app.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
     //     controller : "searchCtrl"
     // })
     
+});
+
+app.run(function($http) {
+    //editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
+    
+    var token = window.sessionStorage.getItem('token')
+    $http.defaults.headers.common.Authorization = token;
 });
 app.controller("homeCtrl", function($scope) {
     $scope.firstName = "John";

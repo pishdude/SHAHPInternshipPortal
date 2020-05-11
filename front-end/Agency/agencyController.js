@@ -7,4 +7,23 @@ app.controller("agencyCtrl", function($scope) {
   $scope.website="www.example.com";
   $scope.categories="Children,Aged"
  
+
+  $scope.load = function(){
+    $scope.job = JSON.parse(window.localStorage.getItem('job'));
+    console.log($scope.job.name)
+    $scope.agency = $scope.job.name
+    $scope.description = $scope.job.description
+    $scope.location = $scope.job.locations[0].City +","+ $scope.job.locations[0].Province
+    $scope.website= $scope.job.applicationprocedure.website
+    $scope.categories =""
+    for (let index = 0; index < $scope.job.categories.length; index++) {
+      $scope.categories = $scope.categories + $scope.job.categories[index].category+";"
+      
+    }
+    $scope.supervisorName = $scope.job.supervisor.name
+    $scope.supervisorEmail = $scope.job.supervisor.email
+    
+  }
+
+  $scope.load()
   });

@@ -105,10 +105,16 @@ class AgencyDto:
         'supervisor':fields.Nested(supervisor),
         'categories': fields.List(fields.Nested(categories),description='user Identifier'),
         'applicationprocedure':fields.Nested(applicationprocedure),
+         'count' : fields.String(description="criminalCheck"),
         # 'bannerId': fields.String(description='user Identifier'),
         # 'program': fields.String(description='user Identifier'),
         # 'year': fields.String(description='user Identifier'),
         # 'interests': fields.List(fields.String,description='user Identifier')
     
+    })
+
+    drop = api.model('drop',{
+        # 'cities':fields.List(fields.String)
+        'cities':fields.String()
     })
     

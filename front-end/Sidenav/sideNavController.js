@@ -15,7 +15,9 @@ app.controller("sideCtrl",['$scope', 'loginService',function($scope,loginService
         loginService.logout()
             .then(function (response) {
                 $scope.customers = response.data;
+                window.sessionStorage.clear()
                 window.location.href = $scope.path + "login";
+                
             }, function (error) {
                 $scope.status = 'Unable to load customer data: ' + error.message;
             });
